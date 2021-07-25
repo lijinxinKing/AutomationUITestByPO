@@ -9,7 +9,7 @@ import pytest
 
 if __name__ == '__main__':
     #数据目录，
-    command_line = ["-s", "./test_case/test_case.py", "--alluredir=allure-result"]
+    command_line = ["-s", "./test_case/test_case.py", "--alluredir=allure-result","--clean-alluredir"]
     pytest.main(command_line)
     #生成测试报告 找到测试数据 生成测试报告 指定目录
-    os.system('allure generate ./allure-result -o ./reports')
+    os.system('allure generate --clean ./allure-result -o ./reports')

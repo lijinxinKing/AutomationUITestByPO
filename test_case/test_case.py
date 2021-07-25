@@ -20,6 +20,12 @@ class TestDemo:
     def test_login(self,udata):
         self.lp.login(udata['account'],udata['password'])
 
+    def test_login1(self):
+        assert 1 == 1
 
-if __name__=='__main__':
+    @pytest.mark.parametrize('udata', loadyaml('./data/search.yaml'))
+    def test_login2(self,udata):
+        self.ip.search(udata['txt'])
+
+if __name__ == '__main__':
     pytest.main()
